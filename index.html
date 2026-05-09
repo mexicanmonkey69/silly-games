@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EthicalOps Web Toolkit</title>
+    <meta
+      name="description"
+      content="A browser-based ethical hacking command center for defensive demos, training, and authorized security workflows."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to dashboard</a>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Toolkit navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">EO</div>
+          <div>
+            <p class="eyebrow">EthicalOps</p>
+            <h1>Web Toolkit</h1>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Primary">
+          <a href="#overview" class="active">Overview</a>
+          <a href="#packets">Packet Lab</a>
+          <a href="#sdr">SDR Console</a>
+          <a href="#wifi">Wi‑Fi Audit</a>
+          <a href="#plugins">Plugins</a>
+          <a href="#assistant">AI Assistant</a>
+          <a href="#cloud">Cloud Sync</a>
+        </nav>
+
+        <section class="ethics-card" aria-labelledby="ethics-title">
+          <p class="eyebrow">Safety mode</p>
+          <h2 id="ethics-title">Authorized use only</h2>
+          <p>
+            This interface is built for asset owners, blue teams, classrooms, and labs. Offensive or unauthorized actions are intentionally not implemented.
+          </p>
+        </section>
+      </aside>
+
+      <main id="main" class="dashboard">
+        <header class="hero" id="overview">
+          <div>
+            <p class="eyebrow">Unified browser command center</p>
+            <h2>Everything you need to manage an ethical security lab, visible in one web dashboard.</h2>
+            <p class="hero-copy">
+              Track defensive packet analysis, SDR observations, Wi‑Fi posture checks, plugin health, AI-assisted triage, and sync status from any modern desktop or mobile browser.
+            </p>
+          </div>
+          <div class="hero-actions" aria-label="Dashboard actions">
+            <button class="primary" id="runDemo">Run safe demo scan</button>
+            <button class="secondary" id="exportReport">Export report</button>
+          </div>
+        </header>
+
+        <section class="status-grid" aria-label="Toolkit status summary">
+          <article class="status-card good">
+            <span>Authorized targets</span>
+            <strong id="targetCount">4</strong>
+            <small>Lab ranges and owned assets</small>
+          </article>
+          <article class="status-card warn">
+            <span>Findings to review</span>
+            <strong id="findingCount">7</strong>
+            <small>Configuration and hygiene issues</small>
+          </article>
+          <article class="status-card good">
+            <span>Plugins online</span>
+            <strong id="pluginCount">8</strong>
+            <small>Signed extensions loaded</small>
+          </article>
+          <article class="status-card info">
+            <span>Cloud sync</span>
+            <strong id="syncState">Ready</strong>
+            <small>Encrypted workspace snapshot</small>
+          </article>
+        </section>
+
+        <section class="module-grid">
+          <article class="panel wide" id="packets">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Packet analysis</p>
+                <h3>Traffic timeline</h3>
+              </div>
+              <span class="pill">Read-only PCAP mode</span>
+            </div>
+            <div class="chart" aria-label="Packet volume chart">
+              <span style="--height: 35%"></span>
+              <span style="--height: 70%"></span>
+              <span style="--height: 48%"></span>
+              <span style="--height: 82%"></span>
+              <span style="--height: 58%"></span>
+              <span style="--height: 44%"></span>
+              <span style="--height: 76%"></span>
+              <span style="--height: 62%"></span>
+            </div>
+            <ul class="event-list" id="packetEvents"></ul>
+          </article>
+
+          <article class="panel" id="sdr">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">SDR integration</p>
+                <h3>Signal monitor</h3>
+              </div>
+              <span class="pill">Passive</span>
+            </div>
+            <div class="signal-meter" aria-hidden="true"><span></span></div>
+            <dl class="metric-list">
+              <div><dt>Frequency</dt><dd>433.920 MHz</dd></div>
+              <div><dt>Mode</dt><dd>Observation only</dd></div>
+              <div><dt>Noise floor</dt><dd>-91 dBm</dd></div>
+            </dl>
+          </article>
+
+          <article class="panel" id="wifi">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Wi‑Fi auditing</p>
+                <h3>Owned network posture</h3>
+              </div>
+              <span class="pill">No exploitation</span>
+            </div>
+            <ul class="check-list">
+              <li><span class="check good">✓</span> WPA3 transition mode reviewed</li>
+              <li><span class="check good">✓</span> Guest isolation enabled</li>
+              <li><span class="check warn">!</span> Legacy IoT VLAN needs rotation</li>
+              <li><span class="check good">✓</span> Rogue AP watchlist clean</li>
+            </ul>
+          </article>
+
+          <article class="panel" id="plugins">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Plugin system</p>
+                <h3>Extension marketplace</h3>
+              </div>
+              <span class="pill">Signed only</span>
+            </div>
+            <div class="plugin-list" id="pluginList"></div>
+          </article>
+
+          <article class="panel assistant" id="assistant">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">AI assistant</p>
+                <h3>Defensive triage helper</h3>
+              </div>
+              <span class="pill">Policy guarded</span>
+            </div>
+            <div class="chat-window" id="chatWindow" aria-live="polite"></div>
+            <form class="chat-form" id="assistantForm">
+              <label class="sr-only" for="assistantInput">Ask the assistant</label>
+              <input id="assistantInput" type="text" placeholder="Ask for a safe remediation plan..." autocomplete="off" />
+              <button type="submit">Ask</button>
+            </form>
+          </article>
+
+          <article class="panel" id="cloud">
+            <div class="panel-header">
+              <div>
+                <p class="eyebrow">Cloud sync</p>
+                <h3>Workspace continuity</h3>
+              </div>
+              <span class="pill">Encrypted</span>
+            </div>
+            <ol class="timeline">
+              <li><strong>Snapshot created</strong><span>Browser workspace saved locally</span></li>
+              <li><strong>Keys verified</strong><span>Device trust policy satisfied</span></li>
+              <li><strong>Sync queued</strong><span>Ready for approved backend connector</span></li>
+            </ol>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <template id="eventTemplate">
+      <li>
+        <span class="event-dot"></span>
+        <div><strong></strong><small></small></div>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
