@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EthicalOps Web Toolkit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Toolkit navigation">
+      <div class="brand">
+        <div class="brand-mark">EO</div>
+        <div>
+          <h1>EthicalOps</h1>
+          <p>Defensive security console</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#overview" class="active">Overview</a>
+        <a href="#packets">Packet Lab</a>
+        <a href="#sdr">SDR Monitor</a>
+        <a href="#wifi">Wi-Fi Audit</a>
+        <a href="#plugins">Plugins</a>
+        <a href="#assistant">AI Assistant</a>
+        <a href="#sync">Cloud Sync</a>
+      </nav>
+      <div class="scope-card">
+        <strong>Scope guard</strong>
+        <p>Use only on systems, radios, and networks you own or are explicitly authorized to assess.</p>
+      </div>
+    </aside>
+
+    <main>
+      <header class="hero" id="overview">
+        <div>
+          <p class="eyebrow">Cross-platform web workspace</p>
+          <h2>One safe dashboard for ethical hacking workflows.</h2>
+          <p class="hero-copy">Track authorized engagements, inspect sample traffic, monitor lab SDR signals, review Wi-Fi hygiene, manage plugins, ask a policy-aware assistant, and sync findings across devices.</p>
+          <div class="hero-actions">
+            <button id="runDemo">Run safe demo scan</button>
+            <button class="ghost" id="exportReport">Export report</button>
+          </div>
+        </div>
+        <section class="mission-card" aria-label="Engagement status">
+          <span class="status-dot"></span>
+          <h3>Active engagement</h3>
+          <p id="engagementName">Internal lab readiness review</p>
+          <dl>
+            <div><dt>Authorization</dt><dd>Verified</dd></div>
+            <div><dt>Mode</dt><dd>Passive / simulated</dd></div>
+            <div><dt>Platforms</dt><dd>Web, Desktop, Tablet</dd></div>
+          </dl>
+        </section>
+      </header>
+
+      <section class="grid stats" aria-label="Toolkit status">
+        <article><span id="assetCount">42</span><p>Assets in scope</p></article>
+        <article><span id="packetCount">18.4k</span><p>Packets summarized</p></article>
+        <article><span id="wifiScore">91%</span><p>Wi-Fi hygiene score</p></article>
+        <article><span id="pluginCount">12</span><p>Loaded plugins</p></article>
+      </section>
+
+      <section class="panel wide" id="packets">
+        <div class="section-title">
+          <div><p class="eyebrow">Packet analysis</p><h2>Traffic insights</h2></div>
+          <span>PCAP-safe viewer mock</span>
+        </div>
+        <div class="packet-layout">
+          <canvas id="trafficChart" width="620" height="240" aria-label="Packet activity chart"></canvas>
+          <div class="table-card">
+            <h3>Flagged observations</h3>
+            <table>
+              <thead><tr><th>Time</th><th>Protocol</th><th>Observation</th><th>Severity</th></tr></thead>
+              <tbody id="packetRows"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel" id="sdr">
+          <div class="section-title"><div><p class="eyebrow">SDR integration</p><h2>Signal monitor</h2></div><span>Read-only</span></div>
+          <div class="spectrum" id="spectrum"></div>
+          <ul class="check-list">
+            <li>Lab frequency bookmarks</li>
+            <li>Signal-strength timeline</li>
+            <li>Device profile placeholders</li>
+          </ul>
+        </article>
+
+        <article class="panel" id="wifi">
+          <div class="section-title"><div><p class="eyebrow">Wi-Fi auditing</p><h2>Defensive checks</h2></div><span>Authorized only</span></div>
+          <div id="wifiChecks" class="audit-list"></div>
+        </article>
+      </section>
+
+      <section class="grid two-col">
+        <article class="panel" id="plugins">
+          <div class="section-title"><div><p class="eyebrow">Extensible plugins</p><h2>Module catalog</h2></div><button class="mini" id="togglePlugins">Toggle beta</button></div>
+          <div id="pluginGrid" class="plugin-grid"></div>
+        </article>
+
+        <article class="panel" id="assistant">
+          <div class="section-title"><div><p class="eyebrow">AI assistant</p><h2>Policy-aware helper</h2></div><span>Local demo</span></div>
+          <div class="chat" id="chatLog" aria-live="polite"></div>
+          <form id="assistantForm" class="chat-form">
+            <input id="assistantInput" type="text" placeholder="Ask for a defensive next step..." autocomplete="off" />
+            <button type="submit">Ask</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="panel wide" id="sync">
+        <div class="section-title"><div><p class="eyebrow">Cloud sync & reporting</p><h2>Evidence timeline</h2></div><span>Encrypted workspace concept</span></div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
