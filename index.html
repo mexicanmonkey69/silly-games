@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ethical Ops Web Console</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Primary navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">◇</span>
+          <div>
+            <strong>Ethical Ops</strong>
+            <small>Authorized security lab</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#dashboard">Dashboard</a>
+          <a href="#packets">Packet analysis</a>
+          <a href="#sdr">SDR monitor</a>
+          <a href="#wifi">Wi-Fi audit</a>
+          <a href="#plugins">Plugins</a>
+          <a href="#assistant">AI assistant</a>
+          <a href="#sync">Cloud sync</a>
+        </nav>
+        <div class="ethics-card">
+          <strong>Scope lock</strong>
+          <p>Use only on assets you own or have written permission to test.</p>
+        </div>
+      </aside>
+
+      <main>
+        <header class="hero" id="dashboard">
+          <div>
+            <p class="eyebrow">Cross-platform browser toolkit</p>
+            <h1>Unified ethical hacking command center</h1>
+            <p class="hero-copy">
+              A safe, web-based operations dashboard for lab visibility, packet triage,
+              SDR notes, Wi-Fi posture checks, plugin workflows, AI guidance, and cloud-ready exports.
+            </p>
+            <div class="hero-actions">
+              <button id="runOverview">Run safe overview</button>
+              <button class="secondary" id="exportReport">Export JSON report</button>
+            </div>
+          </div>
+          <section class="mission-card" aria-label="Engagement status">
+            <span class="status-dot"></span>
+            <h2>Engagement health</h2>
+            <p id="scopeStatus">Awaiting authorized scope confirmation.</p>
+            <label class="toggle-row">
+              <input type="checkbox" id="scopeToggle" />
+              <span>I confirm this is an authorized test</span>
+            </label>
+          </section>
+        </header>
+
+        <section class="stats-grid" aria-label="Toolkit summary">
+          <article><span id="assetCount">0</span><small>Assets in scope</small></article>
+          <article><span id="packetCount">0</span><small>Packets reviewed</small></article>
+          <article><span id="pluginCount">0</span><small>Plugins enabled</small></article>
+          <article><span id="riskScore">--</span><small>Risk posture</small></article>
+        </section>
+
+        <section class="panel-grid">
+          <article class="panel wide" id="packets">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Packet analysis</p>
+                <h2>Traffic triage board</h2>
+              </div>
+              <button class="mini" id="addPacket">Add sample packet</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Time</th><th>Protocol</th><th>Source</th><th>Destination</th><th>Observation</th></tr>
+                </thead>
+                <tbody id="packetTable"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel" id="sdr">
+            <p class="eyebrow">SDR integration</p>
+            <h2>Radio spectrum notes</h2>
+            <div class="spectrum" aria-label="Decorative spectrum visualization">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <label>Frequency bookmark
+              <input id="frequencyInput" value="433.920 MHz" />
+            </label>
+            <button class="mini" id="saveFrequency">Save bookmark</button>
+            <ul id="frequencyList"></ul>
+          </article>
+
+          <article class="panel" id="wifi">
+            <p class="eyebrow">Wi-Fi auditing</p>
+            <h2>Wireless posture</h2>
+            <div id="wifiChecklist" class="checklist"></div>
+          </article>
+
+          <article class="panel" id="plugins">
+            <p class="eyebrow">Plugin system</p>
+            <h2>Modular safe tools</h2>
+            <div id="pluginList" class="plugin-list"></div>
+          </article>
+
+          <article class="panel wide" id="assistant">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">AI assistant</p>
+                <h2>Defensive guidance chat</h2>
+              </div>
+            </div>
+            <div id="chatLog" class="chat-log" aria-live="polite"></div>
+            <form id="chatForm" class="chat-form">
+              <input id="chatInput" placeholder="Ask for a safe audit checklist, report wording, or remediation plan" />
+              <button>Ask</button>
+            </form>
+          </article>
+
+          <article class="panel" id="sync">
+            <p class="eyebrow">Cloud sync</p>
+            <h2>Portable workspace</h2>
+            <p>Save local snapshots that can be moved between desktop, tablet, and phone browsers.</p>
+            <button class="mini" id="syncNow">Create local sync point</button>
+            <div id="syncStatus" class="sync-status">No sync point yet.</div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
