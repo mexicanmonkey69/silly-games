@@ -1,0 +1,19 @@
+{
+  "name": "silly-games-ethical-hacking-toolkit",
+  "version": "1.0.0",
+  "description": "A browser-based, authorization-first ethical security operations toolkit prototype.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.js",
+    "test": "node --check src/app.js && node --check scripts/serve.js"
+  },
+  "keywords": [
+    "ethical-hacking",
+    "security",
+    "dashboard",
+    "packet-analysis",
+    "wifi-audit",
+    "sdr"
+  ]
+}
