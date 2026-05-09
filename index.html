@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EthosOps Ethical Hacking Toolkit</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <span class="brand-mark">EO</span>
+          <div>
+            <strong>EthosOps</strong>
+            <small>authorized security lab</small>
+          </div>
+        </div>
+        <nav>
+          <a href="#overview">Overview</a>
+          <a href="#packets">Packets</a>
+          <a href="#sdr">SDR</a>
+          <a href="#wifi">Wi-Fi</a>
+          <a href="#plugins">Plugins</a>
+          <a href="#assistant">AI Assistant</a>
+          <a href="#sync">Cloud Sync</a>
+        </nav>
+        <div class="scope-card">
+          <span class="status-dot"></span>
+          <strong>Authorization gate active</strong>
+          <p>Every workflow requires a defined scope, written permission, and auditable logs.</p>
+        </div>
+      </aside>
+
+      <main>
+        <section class="hero" id="overview">
+          <div>
+            <p class="eyebrow">Cross-platform ethical operations console</p>
+            <h1>One safe workspace for packet insight, RF awareness, Wi‑Fi posture, plugins, AI triage, and cloud sync.</h1>
+            <p class="hero-copy">Designed for owned labs and approved client environments, EthosOps keeps analysis defensive, explainable, and repeatable without enabling unauthorized intrusion.</p>
+            <div class="hero-actions">
+              <button id="startSession">Start authorized session</button>
+              <button class="secondary" id="exportReport">Export report</button>
+            </div>
+          </div>
+          <div class="mission-card" aria-label="Active mission summary">
+            <span>Current engagement</span>
+            <strong id="missionName">Internal lab validation</strong>
+            <dl>
+              <div><dt>Scope</dt><dd>10.10.0.0/24 · Lab APs · ISM demo band</dd></div>
+              <div><dt>Mode</dt><dd>Passive analysis + compliance checks</dd></div>
+              <div><dt>Audit log</dt><dd id="eventCount">0 events</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section class="grid metrics" aria-label="Security metrics">
+          <article><span>Packet flows</span><strong id="packetMetric">1,248</strong><small>12 anomalous, 0 critical</small></article>
+          <article><span>RF signals</span><strong id="sdrMetric">36</strong><small>ISM demo captures classified</small></article>
+          <article><span>Wi‑Fi checks</span><strong id="wifiMetric">94%</strong><small>Policy compliance score</small></article>
+          <article><span>Plugins</span><strong id="pluginMetric">8</strong><small>Signed and sandboxed</small></article>
+        </section>
+
+        <section class="grid modules">
+          <article class="panel" id="packets">
+            <div class="panel-heading"><span class="icon">◈</span><div><h2>Packet analysis</h2><p>Import PCAP metadata, classify flows, and annotate evidence.</p></div></div>
+            <div class="flow-list" id="flowList"></div>
+          </article>
+
+          <article class="panel" id="sdr">
+            <div class="panel-heading"><span class="icon">⌁</span><div><h2>SDR integration</h2><p>Track passive RF observations from approved lab receivers.</p></div></div>
+            <canvas id="spectrum" width="560" height="180" aria-label="Simulated radio spectrum"></canvas>
+            <p class="note">Simulation mode only: no transmission controls or unauthorized interception features.</p>
+          </article>
+
+          <article class="panel" id="wifi">
+            <div class="panel-heading"><span class="icon">⌂</span><div><h2>Wi‑Fi auditing</h2><p>Review configuration posture for networks you own or administer.</p></div></div>
+            <ul class="check-list" id="wifiChecks"></ul>
+          </article>
+
+          <article class="panel" id="plugins">
+            <div class="panel-heading"><span class="icon">✦</span><div><h2>Plugin marketplace</h2><p>Install signed, sandboxed extensions for reporting and enrichment.</p></div></div>
+            <div class="plugin-grid" id="pluginGrid"></div>
+          </article>
+        </section>
+
+        <section class="grid bottom-row">
+          <article class="panel assistant" id="assistant">
+            <div class="panel-heading"><span class="icon">AI</span><div><h2>AI assistant</h2><p>Ask for defensive triage, compliance mapping, and remediation summaries.</p></div></div>
+            <div class="chat-log" id="chatLog"></div>
+            <form id="assistantForm">
+              <input id="assistantInput" autocomplete="off" placeholder="Ask for a defensive summary…" />
+              <button>Ask</button>
+            </form>
+          </article>
+
+          <article class="panel" id="sync">
+            <div class="panel-heading"><span class="icon">☁</span><div><h2>Cloud sync & platforms</h2><p>Encrypted sync state for Windows, macOS, Linux, and offline web.</p></div></div>
+            <div class="sync-card">
+              <div class="sync-ring"><span id="syncPercent">82%</span></div>
+              <div>
+                <strong>Zero-trust sync queue</strong>
+                <p>Client-side encrypted evidence bundles, signed plugin manifests, and role-based review queues.</p>
+                <button class="secondary" id="syncNow">Sync now</button>
+              </div>
+            </div>
+            <div class="platforms"><span>Windows</span><span>macOS</span><span>Linux</span><span>Web</span></div>
+          </article>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
